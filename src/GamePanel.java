@@ -53,7 +53,19 @@ public class GamePanel extends JPanel implements ActionListener {
 	}
 
 	public void move() {
+		for (int i = bodyParts; i > 0; i--) {
+			x[i] = x[i - 1];
+			y[i] = y[i - 1];
+		}
 
+		switch (direction) {
+		case 'U':
+			y[0] = y[0] - UNIT_SIZE;
+			break;
+
+		default:
+			break;
+		}
 	}
 
 	public void newApple() {
